@@ -11,9 +11,28 @@ namespace TestService.FTPLoggingService
 
         private FTPConnection _fTPConnection;
 
+        private string server;
+
+        private string password;
+
+        private string username;
+
 
         public FTPHelper()
         {
+            this.server = "ftp://10.1.0.6:21/";
+            this.username = "";
+            this.password = "";
+            run();
+        }
+
+
+        public FTPHelper(string server, string password, string username)
+        {
+            
+            this.server = server;
+            this.password = password;
+            this.username = username;
             run();
         }
 
@@ -42,7 +61,7 @@ namespace TestService.FTPLoggingService
         private void EstablishConnection()
         {
             // assumes an anonymous connection protocol  
-            this._fTPConnection = new FTPConnection("ftp://10.1.0.6:21/", "", "");
+            this._fTPConnection = new FTPConnection(this.server, this.username, this.password);
         }
 
         private String GetDirectoryContents()

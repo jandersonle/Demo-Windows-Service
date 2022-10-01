@@ -22,20 +22,16 @@ namespace TestService.FTPLoggingService
             this.server = iserver;
             this.userName = iusername;
             this.pwd = ipwd;
-
             InitConnection();
-
         }
 
         private void InitConnection()
         {
             try
             {
-
                 // This assumes the FTP site uses anonymous logon.
                 this._request = (FtpWebRequest)WebRequest.Create(this.server);
                 this._request.Credentials = new NetworkCredential(this.userName, this.pwd);
-
             }
             catch (Exception e)
             {

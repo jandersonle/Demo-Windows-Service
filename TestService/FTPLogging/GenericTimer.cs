@@ -39,7 +39,6 @@ namespace TestService.FTPLoggingService
                     for (var i = 0; i < timesToRepeat; i++)
                     {
                         this.fn();
-                        //Task.Delay(interval).Wait();
                         Thread.Sleep(interval);
                     }
                 }

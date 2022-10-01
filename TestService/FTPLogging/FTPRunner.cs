@@ -16,6 +16,7 @@ namespace TestService.FTPLoggingService
         public static void Main()
         {
             // ftp helper controls the logging protocols uusing the FTPConnectoin class
+            // optional string arguments : server, username, password
             _ = new FTPHelper();
         }
     }
